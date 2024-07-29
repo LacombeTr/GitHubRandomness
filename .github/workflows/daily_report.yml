@@ -11,6 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      issues: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -39,3 +43,5 @@ jobs:
             git commit -m "Daily report for $(date +'%Y-%m-%d')"
             git push
           fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
