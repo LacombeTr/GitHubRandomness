@@ -1,0 +1,36 @@
+name: Generate Daily Report
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # This will run the workflow every day at midnight UTC
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Compile Java program
+        run: javac GenerateReport.java
+
+      - name: Run Java program
+        run: java GenerateReport
+
+      - name: Commit report
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add daily_report.txt
+          git commit -m "Daily report for $(date +'%Y-%m-%d')"
+          git push
