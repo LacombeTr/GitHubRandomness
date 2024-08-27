@@ -1,3 +1,3 @@
-Rapport du jour dans ma vie de développeur pour le : 2024-08-26
+Rapport du jour dans ma vie de développeur pour le : 2024-08-27
 ========================
-J'ai créé un simulateur de machine à café en JavaScript.
+J'ai monté une pyramide de gobelets en plastique.
