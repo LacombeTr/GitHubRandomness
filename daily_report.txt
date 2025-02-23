@@ -1,3 +1,3 @@
-Rapport du jour dans ma vie de développeur pour le : 2025-02-22
+Rapport du jour dans ma vie de développeur pour le : 2025-02-23
 ========================
-J'ai programmé un bot pour répondre 'LOL' à chaque message.
+J'ai appris à faire des tours de magie avec des cartes.
